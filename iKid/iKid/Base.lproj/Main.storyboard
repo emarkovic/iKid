@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Switching View Controller-->
         <scene sceneID="MAH-sI-JKS">
             <objects>
-                <viewController id="6Im-kM-ZEj" customClass="ViewController" customModule="iKid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SwitchView" id="6Im-kM-ZEj" customClass="SwitchingViewController" customModule="iKid" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cnR-JZ-zPL"/>
                         <viewControllerLayoutGuide type="bottom" id="icL-1w-k8T"/>
@@ -37,12 +37,39 @@
                                     <constraint firstAttribute="width" constant="50" id="Ali-cE-f7u"/>
                                 </constraints>
                                 <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="switchViews:" destination="6Im-kM-ZEj" eventType="touchUpInside" id="vZr-FP-49x"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTy-pP-eJq">
-                                <rect key="frame" x="16" y="132" width="288" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="zqd-jp-spc"/>
-                                </constraints>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="icL-1w-k8T" firstAttribute="top" secondItem="gvL-xu-QQF" secondAttribute="bottom" constant="20" id="217-dw-JH8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gvL-xu-QQF" secondAttribute="trailing" constant="7" id="M6L-aF-pzu"/>
+                            <constraint firstItem="3cD-ZR-gcg" firstAttribute="top" secondItem="cnR-JZ-zPL" secondAttribute="bottom" constant="8" id="MAl-be-GE7"/>
+                            <constraint firstItem="3cD-ZR-gcg" firstAttribute="leading" secondItem="jdB-gH-7Or" secondAttribute="leading" id="OLV-YN-Vod"/>
+                            <constraint firstAttribute="trailing" secondItem="3cD-ZR-gcg" secondAttribute="trailing" id="SyT-mI-uSc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d3n-ww-ghm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1378.125" y="-362.32394366197184"/>
+        </scene>
+        <!--Joke View Controller-->
+        <scene sceneID="rOM-4l-tn4">
+            <objects>
+                <viewController storyboardIdentifier="JokeView" id="Kp1-1X-hkw" customClass="JokeViewController" customModule="iKid" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y2t-or-rb0"/>
+                        <viewControllerLayoutGuide type="bottom" id="flT-WI-YTn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kmv-lx-pvY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joke" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ph-1x-Ukz">
+                                <rect key="frame" x="26" y="40" width="268" height="498"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -50,20 +77,48 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="icL-1w-k8T" firstAttribute="top" secondItem="gvL-xu-QQF" secondAttribute="bottom" constant="20" id="217-dw-JH8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gvL-xu-QQF" secondAttribute="trailing" constant="7" id="M6L-aF-pzu"/>
-                            <constraint firstItem="3cD-ZR-gcg" firstAttribute="top" secondItem="cnR-JZ-zPL" secondAttribute="bottom" constant="8" id="MAl-be-GE7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZTy-pP-eJq" secondAttribute="trailing" id="NlW-Kz-87y"/>
-                            <constraint firstItem="3cD-ZR-gcg" firstAttribute="leading" secondItem="jdB-gH-7Or" secondAttribute="leading" id="OLV-YN-Vod"/>
-                            <constraint firstAttribute="trailing" secondItem="3cD-ZR-gcg" secondAttribute="trailing" id="SyT-mI-uSc"/>
-                            <constraint firstItem="ZTy-pP-eJq" firstAttribute="leading" secondItem="jdB-gH-7Or" secondAttribute="leadingMargin" id="kRI-Zz-gO3"/>
-                            <constraint firstItem="ZTy-pP-eJq" firstAttribute="top" secondItem="3cD-ZR-gcg" secondAttribute="bottom" constant="60" id="oee-Zr-fFJ"/>
+                            <constraint firstItem="flT-WI-YTn" firstAttribute="top" secondItem="3Ph-1x-Ukz" secondAttribute="bottom" constant="30" id="0K1-xa-n5Y"/>
+                            <constraint firstItem="3Ph-1x-Ukz" firstAttribute="leading" secondItem="kmv-lx-pvY" secondAttribute="leadingMargin" constant="10" id="aKO-Xu-p0F"/>
+                            <constraint firstItem="3Ph-1x-Ukz" firstAttribute="top" secondItem="y2t-or-rb0" secondAttribute="bottom" constant="20" id="byX-ty-7tw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3Ph-1x-Ukz" secondAttribute="trailing" constant="10" id="tuC-ef-rBN"/>
                         </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d3n-ww-ghm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3tc-E8-zzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1378.125" y="-362.32394366197184"/>
+            <point key="canvasLocation" x="-651" y="-362"/>
+        </scene>
+        <!--Punchline View Controller-->
+        <scene sceneID="nqR-E9-ebQ">
+            <objects>
+                <viewController storyboardIdentifier="PunchlineView" id="OPS-4n-twa" customClass="PunchlineViewController" customModule="iKid" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kZ3-Uw-Cwk"/>
+                        <viewControllerLayoutGuide type="bottom" id="zrU-8E-82D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yyG-bE-cdu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PunchLine" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezi-xD-51W">
+                                <rect key="frame" x="26" y="40" width="268" height="498"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ezi-xD-51W" firstAttribute="leading" secondItem="yyG-bE-cdu" secondAttribute="leadingMargin" constant="10" id="I8a-q8-Qrn"/>
+                            <constraint firstItem="ezi-xD-51W" firstAttribute="top" secondItem="kZ3-Uw-Cwk" secondAttribute="bottom" constant="20" id="Wir-SE-qcA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ezi-xD-51W" secondAttribute="trailing" constant="10" id="aOV-3T-V7W"/>
+                            <constraint firstItem="zrU-8E-82D" firstAttribute="top" secondItem="ezi-xD-51W" secondAttribute="bottom" constant="30" id="qGB-YW-A8g"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cpJ-KJ-L6w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="88" y="-362"/>
         </scene>
     </scenes>
 </document>
