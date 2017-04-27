@@ -27,6 +27,12 @@ class PunchlineViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func updateLabel() {
+        if punchline != nil && punchlineLabel != nil {
+            punchlineLabel.text = punchline!
+        }
+    }
+    
 
     /*
     // MARK: - Navigation

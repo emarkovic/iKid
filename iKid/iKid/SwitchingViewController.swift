@@ -12,7 +12,7 @@ class SwitchingViewController: UIViewController {
     fileprivate var jokeViewController: JokeViewController!
     fileprivate var punchlineViewController: PunchlineViewController!
     
-    fileprivate var jokes : [String] = ["Why do hamburgers go to the gym?", "Have you ever tried to eat a clock?", "Me: 'Hey, I was thinging...'"]
+    fileprivate var jokes : [String] = ["Why do hamburgers go to the gym?", "Have you ever tried to eat a clock?", "Me: 'Hey, I was thinking...'"]
     fileprivate var punchlines : [String] = ["To get better buns!", "It's very time consuming.", "Data: 'I thought I smelled something burning.'"]
     fileprivate var currentJoke : Int = 0
 
@@ -55,8 +55,6 @@ class SwitchingViewController: UIViewController {
     }
     
     @IBAction func switchViews(_ sender: Any) {
-        print("called switch")
-        
         punchlineBuilder()
         jokeBuilder()
         
@@ -82,10 +80,12 @@ class SwitchingViewController: UIViewController {
         if punchlineViewController == nil {
             punchlineViewController = storyboard?.instantiateViewController(withIdentifier: "PunchlineView") as! PunchlineViewController
             punchlineViewController.punchline = punchlines[currentJoke]
+            
         }
     }
     @IBAction func goodJokePressed(_ sender: Any) {
         currentJoke = 0
+        updateJoke()
     }
     
     @IBAction func punPressed(_ sender: Any) {
@@ -94,6 +94,16 @@ class SwitchingViewController: UIViewController {
     
     @IBAction func dadJokePressed(_ sender: Any) {
         currentJoke = 2
+        updateJoke()
+    }
+    
+    func updateJoke() {
+        if jokeViewController != nil {
+            jokeViewController.jokeLabel.text = jokes[currentJoke]
+        }
+        if punchlineViewController != nil {
+            punchlineViewController.punchlineLabel.text = punchlines[currentJoke]
+        }
     }
     
 
