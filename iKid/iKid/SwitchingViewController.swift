@@ -20,7 +20,14 @@ class SwitchingViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        if jokeViewController != nil {
+            jokeViewController?.dismiss(animated: true, completion: nil)
+        }
+        if punchlineViewController != nil {
+            punchlineViewController?.dismiss(animated: true, completion: nil)
+        }
+        
     }
     
     @IBAction func switchViews(_ sender: Any) {
