@@ -104,11 +104,11 @@
 				61E0FB441EB1B39600C250D0 /* AppDelegate.swift */,
 				613CD6EA1EB258AC0087F58E /* SwitchingViewController.swift */,
 				613CD6EC1EB25B8B0087F58E /* JokeViewController.swift */,
+				613CD6EE1EB25BBB0087F58E /* PunchlineViewController.swift */,
 				61E0FB481EB1B39600C250D0 /* Main.storyboard */,
 				61E0FB4B1EB1B39600C250D0 /* Assets.xcassets */,
 				61E0FB4D1EB1B39600C250D0 /* LaunchScreen.storyboard */,
 				61E0FB501EB1B39600C250D0 /* Info.plist */,
-				613CD6EE1EB25BBB0087F58E /* PunchlineViewController.swift */,
 			);
 			path = iKid;
 			sourceTree = "<group>";

@@ -16,6 +16,12 @@ class SwitchingViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        jokeBuilder()
+        if jokeViewController != nil {
+            self.addChildViewController(jokeViewController!)
+            self.view.insertSubview(jokeViewController!.view, at: 0)
+            jokeViewController!.didMove(toParentViewController: self)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,8 +36,35 @@ class SwitchingViewController: UIViewController {
         
     }
     
+    fileprivate func switchViewController(_ from: UIViewController?, to: UIViewController?) {
+        if from != nil {
+            from!.willMove(toParentViewController: nil)
+            from!.view.removeFromSuperview()
+            from!.removeFromParentViewController()
+        }
+        
+        if to != nil {
+            self.addChildViewController(to!)
+            self.view.insertSubview(to!.view, at: 0)
+            to!.didMove(toParentViewController: self)
+        }
+    }
+    
     @IBAction func switchViews(_ sender: Any) {
         print("called switch")
+        
+        punchlineBuilder()
+        jokeBuilder()
+        
+        if jokeViewController != nil && jokeViewController.view.superview != nil {
+            UIView.setAnimationTransition(.flipFromRight, for: view, cache: true)
+            punchlineViewController.view.frame = view.frame
+            switchViewController(jokeViewController, to: punchlineViewController)
+        } else {
+            UIView.setAnimationTransition(.flipFromLeft, for: view, cache: true)
+            jokeViewController.view.frame = view.frame
+            switchViewController(punchlineViewController, to: jokeViewController)
+        }
     }
     
     fileprivate func jokeBuilder() {
@@ -42,7 +75,7 @@ class SwitchingViewController: UIViewController {
     
     fileprivate func punchlineBuilder() {
         if punchlineViewController == nil {
-            punchlineViewController = storyboard?.instantiateViewController(withIdentifier: "PunchlinView") as! PunchlineViewController
+            punchlineViewController = storyboard?.instantiateViewController(withIdentifier: "PunchlineView") as! PunchlineViewController
         }
     }
 
