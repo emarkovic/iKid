@@ -25,9 +25,21 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3cD-ZR-gcg">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem title="Good Jokes" id="P9g-R1-myQ"/>
-                                    <barButtonItem title="Puns" width="49" id="EgZ-RZ-oaI"/>
-                                    <barButtonItem title="Dad Jokes" id="OZ2-cP-ZVx"/>
+                                    <barButtonItem title="Good Jokes" id="P9g-R1-myQ">
+                                        <connections>
+                                            <action selector="goodJokePressed:" destination="6Im-kM-ZEj" id="9bm-6f-Stv"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Puns" width="49" id="EgZ-RZ-oaI">
+                                        <connections>
+                                            <action selector="punPressed:" destination="6Im-kM-ZEj" id="c26-bI-HHc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Dad Jokes" id="OZ2-cP-ZVx">
+                                        <connections>
+                                            <action selector="dadJokePressed:" destination="6Im-kM-ZEj" id="sAF-59-hLe"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="OlE-eQ-6DC"/>
                                 </items>
                             </toolbar>
@@ -83,6 +95,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="3Ph-1x-Ukz" secondAttribute="trailing" constant="10" id="tuC-ef-rBN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="jokeLabel" destination="3Ph-1x-Ukz" id="0Vb-DK-D8A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3tc-E8-zzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,6 +130,9 @@
                             <constraint firstItem="zrU-8E-82D" firstAttribute="top" secondItem="ezi-xD-51W" secondAttribute="bottom" constant="30" id="qGB-YW-A8g"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="punchlineLabel" destination="ezi-xD-51W" id="3Oc-hr-aqW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpJ-KJ-L6w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

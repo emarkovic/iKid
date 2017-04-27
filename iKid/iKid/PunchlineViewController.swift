@@ -10,10 +10,16 @@ import UIKit
 
 class PunchlineViewController: UIViewController {
 
+    @IBOutlet weak var punchlineLabel: UILabel!
+    var punchline : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if punchline != nil {
+            punchlineLabel.text = punchline!
+        }
     }
 
     override func didReceiveMemoryWarning() {

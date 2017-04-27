@@ -11,6 +11,10 @@ import UIKit
 class SwitchingViewController: UIViewController {
     fileprivate var jokeViewController: JokeViewController!
     fileprivate var punchlineViewController: PunchlineViewController!
+    
+    fileprivate var jokes : [String] = ["Why do hamburgers go to the gym?", "Have you ever tried to eat a clock?", "Me: 'Hey, I was thinging...'"]
+    fileprivate var punchlines : [String] = ["To get better buns!", "It's very time consuming.", "Data: 'I thought I smelled something burning.'"]
+    fileprivate var currentJoke : Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,14 +74,28 @@ class SwitchingViewController: UIViewController {
     fileprivate func jokeBuilder() {
         if jokeViewController == nil {
             jokeViewController = storyboard?.instantiateViewController(withIdentifier: "JokeView") as! JokeViewController
+            jokeViewController.joke = jokes[currentJoke]
         }
     }
     
     fileprivate func punchlineBuilder() {
         if punchlineViewController == nil {
             punchlineViewController = storyboard?.instantiateViewController(withIdentifier: "PunchlineView") as! PunchlineViewController
+            punchlineViewController.punchline = punchlines[currentJoke]
         }
     }
+    @IBAction func goodJokePressed(_ sender: Any) {
+        currentJoke = 0
+    }
+    
+    @IBAction func punPressed(_ sender: Any) {
+        currentJoke = 1
+    }
+    
+    @IBAction func dadJokePressed(_ sender: Any) {
+        currentJoke = 2
+    }
+    
 
     /*
     // MARK: - Navigation
