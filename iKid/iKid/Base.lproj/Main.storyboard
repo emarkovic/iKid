@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6Im-kM-ZEj">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="MAH-sI-JKS">
+            <objects>
+                <viewController id="6Im-kM-ZEj" customClass="ViewController" customModule="iKid" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cnR-JZ-zPL"/>
+                        <viewControllerLayoutGuide type="bottom" id="icL-1w-k8T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jdB-gH-7Or">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3cD-ZR-gcg">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem title="Good Jokes" id="P9g-R1-myQ"/>
+                                    <barButtonItem title="Puns" width="49" id="EgZ-RZ-oaI"/>
+                                    <barButtonItem title="Dad Jokes" id="OZ2-cP-ZVx"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="OlE-eQ-6DC"/>
+                                </items>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvL-xu-QQF">
+                                <rect key="frame" x="247" y="518" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Ali-cE-f7u"/>
+                                </constraints>
+                                <state key="normal" title="Next"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTy-pP-eJq">
+                                <rect key="frame" x="16" y="132" width="288" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="zqd-jp-spc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="icL-1w-k8T" firstAttribute="top" secondItem="gvL-xu-QQF" secondAttribute="bottom" constant="20" id="217-dw-JH8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gvL-xu-QQF" secondAttribute="trailing" constant="7" id="M6L-aF-pzu"/>
+                            <constraint firstItem="3cD-ZR-gcg" firstAttribute="top" secondItem="cnR-JZ-zPL" secondAttribute="bottom" constant="8" id="MAl-be-GE7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZTy-pP-eJq" secondAttribute="trailing" id="NlW-Kz-87y"/>
+                            <constraint firstItem="3cD-ZR-gcg" firstAttribute="leading" secondItem="jdB-gH-7Or" secondAttribute="leading" id="OLV-YN-Vod"/>
+                            <constraint firstAttribute="trailing" secondItem="3cD-ZR-gcg" secondAttribute="trailing" id="SyT-mI-uSc"/>
+                            <constraint firstItem="ZTy-pP-eJq" firstAttribute="leading" secondItem="jdB-gH-7Or" secondAttribute="leadingMargin" id="kRI-Zz-gO3"/>
+                            <constraint firstItem="ZTy-pP-eJq" firstAttribute="top" secondItem="3cD-ZR-gcg" secondAttribute="bottom" constant="60" id="oee-Zr-fFJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d3n-ww-ghm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1378.125" y="-362.32394366197184"/>
+        </scene>
+    </scenes>
+</document>
